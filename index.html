@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Crud Web JS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-table">
+            <span class="title"> Cadastro de Alunos</span>
+        </div>
+        <div class="body-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Idade</th>
+                        <th class="acao">Editar</th>
+                        <th class="acao">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- a tag também poderia ser adicionado via JS mas com a criação do elemento no arquivo html já é possível adicionar somente com o inner html -->
+                    <tr>
+                        <td>00</td>
+                        <td>nome_do_aluno</td>
+                        <td>turma_do_aluno</td>
+                        <td>idade_do_aluno</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-footer">
+            <button>Adicionar Aluno</button>
+        </div>
+
+        <div class="modal-container">
+            <div class="modal">
+                <form action="">
+                    <label for="id">ID</label>
+                    <input id="id" type="number" required>
+
+                    <label for="name">Nome</label>
+                    <input id="name" type="text" required>
+
+                    <label for="turma">Turma</label>
+                    <input id="turma" type="text" required>
+
+                    <label for="idade">Idade</label>
+                    <input id="idade" type="number" required>
+
+                    <button id="save">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>
