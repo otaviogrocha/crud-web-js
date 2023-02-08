@@ -117,7 +117,7 @@ tbody tr td.acao {
     border-radius: 5px;
     border: none;
     color: white;
-    background-color: rgb(57, 57, 226);
+    background-color: rgb(93, 25, 124);
 }
 
 
@@ -166,7 +166,7 @@ tbody tr td.acao {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    display: block;
     z-index: 999;
     align-items: center;
     justify-content: center;
@@ -206,7 +206,7 @@ tbody tr td.acao {
     padding: 5px 10px;
     width: 100%;
     border: none;
-    background-color: rgb(57, 57, 226);
+    background-color: rgb(93, 25, 124);
     color: white;
 }
 
