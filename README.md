@@ -1,2 +1,4 @@
-# crud-web-js
-crud with js practice
+# CRUD-WEB-JS
+
+- Arrumar o botão de #ADD [x]
+- Fazer funções CRUD []
