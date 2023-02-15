@@ -5,3 +5,5 @@
 - Fazer funções CRUD [ ]
 - Alterar tipo de input de numero no form de Adicionar Aluno[ ]
 - Pensar uma forma de gerar número de ID toda vez que um usuário for adicionado[ ]
+
+- Consertar bug scroll dentro da tabela [ ]

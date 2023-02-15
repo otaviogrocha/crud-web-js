@@ -12,25 +12,29 @@ const idade = document.getElementById('idade');
 //     turma: 1,
 // }
 
-var alunos = [["Arthur", "Turma 5", 16], ["Caio","Turma 4", 13], ["Bernardo","Turma 2", 10]]
+var alunos = [["Arthur", "Turma 5", 16], ["Caio", "Turma 4", 13], ["Bernardo", "Turma 2", 10]]
 
 var id = '00';
 
-function insertValues() {
+function insertValues(aluno, index) {
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
-        <td>${id}</td>
-        <td>${nome.value}</td>
-        <td>${turma.value}</td>
-        <td>${idade.value}</td>
+    <td>${id}</td>
+        `;for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            
+        }`
+        <td>${aluno}</td>
+        <td>${aluno}</td>
+        <td>${aluno}</td>
         <td class ="acao">
-            <button onclick = "editItem({})"><i class ='bx bx-edit'></i></button>
+        <button onclick = "editItem({})"><i class ='bx bx-edit'></i></button>
         </td>
         <td class ="acao">
-            <button onclick = "deleteItem({})"><i class ='bx bx-trash'></i></button>
+        <button onclick = "deleteItem({})"><i class ='bx bx-trash'></i></button>
         </td>
-    `
+        `
     tbody.appendChild(tr)
 }
 
@@ -43,18 +47,28 @@ function insertValues() {
 
 //  Ativar e remover Modal
 
-function openModal() {
-    addBtn.addEventListener('click', () => {
-        modal.classList.add('active')
-    })
+function openModal(edit = false, index, value) {
+    modal.classList.add('active')
 
     document.addEventListener('click', (e) => {
-        if (e.target.className == 'modal-container active')
+        // console.log(e.target.outerHTML)
+        if (e.target.className === 'modal-container active')
             modal.classList.remove('active');
     })
+
+    if (edit) {
+        nome.value = alunos[index][value]
+        turma.value = alunos[index][value]
+        idade.value = alunos[index][value]
+    } else {
+        limpaCampos()
+    }
 }
 
-openModal();
+addBtn.addEventListener('click', () => {
+    openModal();
+})
+
 // CREATE
 
 function create() {
@@ -67,26 +81,63 @@ function create() {
         insertValues();
 
         modal.classList.remove('active')
-    }
-    )
+        limpaCampos();
+    })
 }
 
 create()
 
 // READ
 
+for (let i = 0; i < alunos.length; i++) {
+    console.log("")
+    alunos[i].forEach( (aluno, index) => {
+        insertValues(aluno, index) 
+        console.log(aluno)
+    }); 
+}
 
 
 
-// UPDATE
 
 
 
 
-// DELETE
+
+// const newArray1 = []
+// const newArray2 = []
+// const newArray3 = []
+
+
+// for (let i = 0; i < alunos.length; i++) {
+//     // for (let x = 0; x < alunos.length; x++) {
+//     // }
+//     newArray1.push(alunos[i])
+//     // console.log(alunos[i])
+//     console.log("")
+// }
+
+    // newArray1.forEach(alunos => {
+    //     console.log(alunos)
+    // });
+
+    // alunos.reduce()
 
 
 
+    // UPDATE
+
+
+
+
+    // DELETE
+
+
+    function limpaCampos() {
+        nome.value = ''
+        turma.value = ''
+        idade.value = ''
+    }
 
 
 
