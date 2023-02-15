@@ -12,11 +12,15 @@ const idade = document.getElementById('idade');
 //     turma: 1,
 // }
 
+var alunos = [["Arthur", "Turma 5", 16], ["Caio","Turma 4", 13], ["Bernardo","Turma 2", 10]]
 
-function insertValues(){
+var id = '00';
+
+function insertValues() {
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
+        <td>${id}</td>
         <td>${nome.value}</td>
         <td>${turma.value}</td>
         <td>${idade.value}</td>
@@ -55,11 +59,14 @@ openModal();
 
 function create() {
     saveBtn.addEventListener('click', (e) => {
+        if (nome.value == '' || turma.value == '' || idade.value == '') {
+            return
+        }
 
         e.preventDefault()
         insertValues();
+
         modal.classList.remove('active')
-        console.log('clique')
     }
     )
 }

@@ -3,5 +3,5 @@
 - Arrumar o botão de #ADD [x]
 - Colocar diretório .vscode/ dentro do git ignore e remover do repositório remoto [x]
 - Fazer funções CRUD [ ]
-- Alterar tipo de input no form de Adicionar Aluno[ ]
-- Gerar número de ID toda vez que um usuário for adicionado[ ]
+- Alterar tipo de input de numero no form de Adicionar Aluno[ ]
+- Pensar uma forma de gerar número de ID toda vez que um usuário for adicionado[ ]
