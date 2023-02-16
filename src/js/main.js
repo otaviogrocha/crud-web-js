@@ -12,7 +12,7 @@ const idade = document.getElementById('idade');
 //     turma: 1,
 // }
 
-var alunos = [["Arthur", "Turma 5", 16], ["Caio", "Turma 4", 13], ["Bernardo", "Turma 2", 10]]
+var alunos = [["Arthur", "Turma 5", 16], ["Bernardo", "Turma 4", 13], ["Caio", "Turma 2", 10]]
 
 var id = '00';
 
@@ -20,14 +20,10 @@ function insertValues(aluno, index) {
     let tr = document.createElement('tr')
 
     tr.innerHTML = `
-    <td>${id}</td>
-        `;for (let index = 0; index < array.length; index++) {
-            const element = array[index];
-            
-        }`
-        <td>${aluno}</td>
-        <td>${aluno}</td>
-        <td>${aluno}</td>
+        <td>${id}</td>
+        <td>${aluno[index]}</td>
+        <td>${aluno[index + 1]}</td>
+        <td>${aluno[index + 2]}</td>
         <td class ="acao">
         <button onclick = "editItem({})"><i class ='bx bx-edit'></i></button>
         </td>
@@ -78,66 +74,70 @@ function create() {
         }
 
         e.preventDefault()
-        insertValues();
+
+        const newValues = [];
+        newValues.push(nome.value, turma.value, idade.value)
+        addInputValues(newValues)
+        newValues.splice();
 
         modal.classList.remove('active')
         limpaCampos();
     })
 }
 
+
+
 create()
 
 // READ
 
-for (let i = 0; i < alunos.length; i++) {
-    console.log("")
-    alunos[i].forEach( (aluno, index) => {
-        insertValues(aluno, index) 
-        console.log(aluno)
-    }); 
-}
+// for (let i = 0; i < alunos.length; i++) {
+//     console.log("")
+//     alunos[i].forEach((aluno, index) => {
+//         insertValues(aluno, index)
+//         console.log(aluno)
+//     });
+// }
 
+// newArray1.forEach(alunos => {
+//     console.log(alunos)
+// });
 
-
-
-
-
-
+// alunos.reduce()
 
 // const newArray1 = []
 // const newArray2 = []
 // const newArray3 = []
 
+read(alunos)
 
-// for (let i = 0; i < alunos.length; i++) {
-//     // for (let x = 0; x < alunos.length; x++) {
-//     // }
-//     newArray1.push(alunos[i])
-//     // console.log(alunos[i])
-//     console.log("")
-// }
-
-    // newArray1.forEach(alunos => {
-    //     console.log(alunos)
-    // });
-
-    // alunos.reduce()
-
-
-
-    // UPDATE
-
-
-
-
-    // DELETE
-
-
-    function limpaCampos() {
-        nome.value = ''
-        turma.value = ''
-        idade.value = ''
+function read(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let x = 0; x < array.length; x++) {
+            insertValues(array[i], x)
+            break;
+        }
     }
+}
+
+function addInputValues(array) {
+    for (let i = 0; i < array.length; i++) {
+        insertValues(array, i)
+        break
+    }
+}
+
+
+// UPDATE
 
 
 
+
+// DELETE
+
+
+function limpaCampos() {
+    nome.value = ''
+    turma.value = ''
+    idade.value = ''
+}

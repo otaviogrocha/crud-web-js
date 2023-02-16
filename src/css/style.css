@@ -45,6 +45,7 @@ body {
 .body-table {
     padding: 10px 10px 0px 10px;
     width: auto;
+    overflow: auto;
     height: 72.5%;
 }
 
@@ -89,7 +90,7 @@ tbody tr {
     margin-bottom: 50px;
 }
 
-th.acao {
+thead tr th.acao {
     width: 100px;
     text-align: center;
 }
@@ -102,8 +103,9 @@ tbody tr td.acao {
 .table-footer {
     display: flex;
     align-items: center;
+    padding-top: 10px;
     justify-content: space-between;
-    margin: auto 12px;
+    margin: auto 16px;
     position: relative;
     width: auto;
     height: 12.5%;
@@ -112,7 +114,7 @@ tbody tr td.acao {
 #add {
     position: absolute;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     padding: 8px;
     border-radius: 5px;
     border: none;
